@@ -1,5 +1,5 @@
-let pi = "3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128"
-pi = pi.split("")
+let piString = "3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128"
+pi = piString.split("")
 let guessedPi = ""
 let triesLeft = 5
 let i = 0
@@ -26,4 +26,8 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
     document.getElementsByClassName("guessingButtons")[i].addEventListener("click", function () {
         userGuessed(this)
     })
+}
+function showAnswer() {
+    document.getElementById("guessedDigitsInput").style.color = "red"
+    document.getElementById("guessedDigitsInput").innerHTML = piString
 }
