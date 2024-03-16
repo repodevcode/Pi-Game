@@ -1,7 +1,14 @@
+body{
+    overflow: hidden;
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
 #piImage{
     width: 96px;
 }
 #guessedDigitsInput{
     width: 1526px;
     height: 36px;
+    resize: none;
 }
