@@ -12,3 +12,6 @@ body{
     height: 15px;
     resize: none;
 }
+#gameOverPopup{
+    visibility: hidden;
+}

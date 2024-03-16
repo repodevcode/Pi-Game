@@ -8,10 +8,12 @@ date = String(date.getMonth() + 1) + String(+date.getDate())
 
 if (date == "314") {
     document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
-
     document.getElementById("piImage").src = "piDay.png"
 }
 
+function showGameOverPopup() {
+    document.getElementById("gameOverPopup").style.visibility = "visible"
+}
 function userGuessed(el) {
     console.log(el)
     if (pi[i] == el.innerHTML) {
@@ -24,7 +26,7 @@ function userGuessed(el) {
         document.getElementById("piImage").src = "piSad.png"
         document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
         if (triesLeft == 0) {
-            alert('Game Over. You lost.')
+            showGameOverPopup()
         }
     }
     console.log(guessedPi)
@@ -35,6 +37,7 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
         userGuessed(this)
     })
 }
+
 
 function showAnswer() {
     document.getElementById("guessedDigitsInput").style.color = "red"
