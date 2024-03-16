@@ -7,3 +7,4 @@ https://youtu.be/3HRkKznJoZA
 
 ### **Sources**
 * [Pi Image](https://www.smartick.com/blog/wp-content/uploads/pi-1024x991.jpg)
+* [Emojis](https://emojipedia.org/)
