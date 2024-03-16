@@ -1,6 +1,7 @@
 let pi = "3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128"
 pi = pi.split("")
 let guessedPi = ""
+let triesLeft = 5
 let i = 0
 
 function userGuessed(el) {
@@ -12,6 +13,7 @@ function userGuessed(el) {
         i++
     }
     else{
+        triesLeft = triesLeft-1
         document.getElementById("piImage").src = "piSad.png"
 
     }
