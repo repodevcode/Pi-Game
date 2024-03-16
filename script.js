@@ -3,6 +3,14 @@ pi = piString.split("")
 let guessedPi = ""
 let triesLeft = 5
 let i = 0
+let date = new Date();
+date = String(date.getMonth() + 1) + String(+date.getDate())
+
+if (date == "314") {
+    document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
+
+    document.getElementById("piImage").src = "piDay.png"
+}
 
 function userGuessed(el) {
     console.log(el)
@@ -27,6 +35,7 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
         userGuessed(this)
     })
 }
+
 function showAnswer() {
     document.getElementById("guessedDigitsInput").style.color = "red"
     document.getElementById("guessedDigitsInput").innerHTML = piString
