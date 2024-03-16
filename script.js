@@ -8,7 +8,12 @@ function userGuessed(el) {
     if (pi[i] == el.innerHTML) {
         guessedPi = guessedPi + el.innerHTML
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
+        document.getElementById("pi.png").src = "piHappy.png"
         i++
+    }
+    else{
+        document.getElementById("pi.png").src = "piSad.png"
+
     }
     console.log(guessedPi)
 }
