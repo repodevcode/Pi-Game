@@ -11,11 +11,13 @@ function userGuessed(el) {
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
         document.getElementById("piImage").src = "piHappy.png"
         i++
-    }
-    else{
-        triesLeft = triesLeft-1
+    } else {
+        triesLeft = triesLeft - 1
         document.getElementById("piImage").src = "piSad.png"
-
+        document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
+        if (triesLeft == 0) {
+            alert('Game Over. You lost.')
+        }
     }
     console.log(guessedPi)
 }
