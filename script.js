@@ -2,6 +2,7 @@ let piString = "3.14159265358979323846264338327950288419716939937510582097494459
 pi = piString.split("")
 let guessedPi = ""
 let triesLeft = 5
+let gameInProgress = true
 let i = 0
 let date = new Date();
 date = String(date.getMonth() + 1) + String(+date.getDate())
@@ -10,9 +11,13 @@ if (date == "314") {
     document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
     document.getElementById("piImage").src = "piDay.png"
 }
-
-function showGameOverPopup() {
-    document.getElementById("gameOverPopup").style.visibility = "visible"
+function gameFinished() {
+    gameInProgress = false
+    toggleGameOverPopup("visible")
+    document.getElementById("piImage").src = "piCrying.png"
+}
+function toggleGameOverPopup(newVisibility) {
+    document.getElementById("gameOverPopup").style.visibility = newVisibility
 }
 function userGuessed(el) {
     console.log(el)
@@ -21,12 +26,12 @@ function userGuessed(el) {
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
         document.getElementById("piImage").src = "piHappy.png"
         i++
-    } else {
+    } else if(gameInProgress == true){
         triesLeft = triesLeft - 1
         document.getElementById("piImage").src = "piSad.png"
         document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
         if (triesLeft == 0) {
-            showGameOverPopup()
+            gameFinished()
         }
     }
     console.log(guessedPi)
@@ -38,7 +43,11 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
     })
 }
 
-
+function playAgain(){
+    toggleGameOverPopup("hidden")
+    document.getElementById("guessedDigitsInput").style.color = "black"
+    document.getElementById("guessedDigitsInput").innerHTML = ""
+}
 function showAnswer() {
     document.getElementById("guessedDigitsInput").style.color = "red"
     document.getElementById("guessedDigitsInput").innerHTML = piString
