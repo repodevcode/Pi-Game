@@ -20,9 +20,9 @@ function toggleGameOverPopup(newVisibility, result) {
     let getGameOverPopup =  document.getElementById("gameOverPopup")
    getGameOverPopup.style.visibility = newVisibility
     getGameOverPopup.classList.add("gameOverPopup"+result)
-    let getMainDiv = document.getElementById("mainDiv")
-    getMainDiv.style.pointerEvents = "none"
-    getMainDiv.style.filter = "blur(5px)"
+        let getMainDiv = document.getElementById("mainDiv")
+        getMainDiv.style.pointerEvents = "none"
+        getMainDiv.style.filter = "blur(5px)"
 }
 function userGuessed(el) {
     console.log(el)
@@ -62,4 +62,8 @@ function playAgain(){
 function showAnswer() {
     document.getElementById("guessedDigitsInput").style.color = "red"
     document.getElementById("guessedDigitsInput").innerHTML = piString
+    document.getElementById("mainDiv").style = ""
+    let getGameOverPopup =  document.getElementById("gameOverPopup")
+    getGameOverPopup.style.visibility = "hidden"
+
 }

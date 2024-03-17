@@ -29,6 +29,7 @@ body{
     border: red dotted;
     padding: 18px;
 }
+
 .gameOverPopupWon{
     background: #69ff56;
     border: #237a00 dotted;
