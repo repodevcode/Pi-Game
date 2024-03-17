@@ -21,6 +21,9 @@ body{
 }
 #gameOverPopup{
     visibility: hidden;
+    background: #ffa8a8;
+    border: red dotted;
+    padding: 18px;
 }
 .videoDiv{
     visibility: hidden;
