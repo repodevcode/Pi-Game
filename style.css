@@ -6,6 +6,7 @@ body{
     border: dotted blue 3px;
     padding: 14px;
     background: #e4f8ff;
+    text-align: center;
 }
 
 #piImage{
