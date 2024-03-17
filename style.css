@@ -20,3 +20,7 @@ body{
 #gameOverPopup{
     visibility: hidden;
 }
+#videoDiv{
+    top: 2%;
+    position: absolute;
+}

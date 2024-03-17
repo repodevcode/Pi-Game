@@ -10,39 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>The 100+ Digits of Pi Game</h1>
-<h2 id="piDayWish"></h2>
-<img id="piImage" src="pi.png" draggable="false"/>
-<br>
-<br>
-<textarea id="guessedDigitsInput" placeholder="Start Guessing!" readonly>
+<div>
+    <h1>The 100+ Digits of Pi Game</h1>
+    <h2 id="piDayWish"></h2>
+    <img id="piImage" src="pi.png" draggable="false"/>
+    <br>
+    <br>
+    <textarea id="guessedDigitsInput" placeholder="Start Guessing!" readonly>
 </textarea>
-<button class="guessingButtons">1</button>
-<button class="guessingButtons">2</button>
-<button class="guessingButtons">3</button>
-<button class="guessingButtons">4</button>
-<button class="guessingButtons">5</button>
-<button class="guessingButtons">6</button>
-<button class="guessingButtons">7</button>
-<button class="guessingButtons">8</button>
-<button class="guessingButtons">9</button>
-<button class="guessingButtons">0</button>
-<button class="guessingButtons">.</button>
-<br>
-<br>
-<p id="triesLeftSign">5 tries left</p>
-<button class="tools">📻Open Pi Song</button>
+    <button class="guessingButtons">1</button>
+    <button class="guessingButtons">2</button>
+    <button class="guessingButtons">3</button>
+    <button class="guessingButtons">4</button>
+    <button class="guessingButtons">5</button>
+    <button class="guessingButtons">6</button>
+    <button class="guessingButtons">7</button>
+    <button class="guessingButtons">8</button>
+    <button class="guessingButtons">9</button>
+    <button class="guessingButtons">0</button>
+    <button class="guessingButtons">.</button>
+    <br>
+    <br>
+    <p id="triesLeftSign">5 tries left</p>
+    <button class="tools">📻Open Pi Song</button>
 
-<button class="tools">💡Hint</button>
-<button class="tools" onclick="gameFinished()">🏳️Resign</button>
-
+    <button class="tools">💡Hint</button>
+    <button class="tools" onclick="gameFinished()">🏳️Resign</button>
+</div>
 <div id="gameOverPopup">
     <h1>Game Over!</h1>
     <p>You lost.</p>
     <button onclick="playAgain()">Play Again</button>
     <button onclick="showAnswer()">Answer</button>
 </div>
-<div>
+<div id="videoDiv">
     <iframe width="500px" height="500px"
             src="https://www.youtube.com/embed/3HRkKznJoZA?autoplay=0&showinfo=0&controls=0" frameborder="0"
             allowfullscreen></iframe>
