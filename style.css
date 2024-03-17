@@ -21,13 +21,15 @@ body{
 }
 #gameOverPopup{
     visibility: hidden;
+    position: relative;
+    top: -241px;
 }
-.gameOverPopupWon {
+.gameOverPopupLost {
     background: #ffa8a8;
     border: red dotted;
     padding: 18px;
 }
-.gameOverPopupLost{
+.gameOverPopupWon{
     background: #69ff56;
     border: #237a00 dotted;
     padding: 18px;

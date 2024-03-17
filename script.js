@@ -11,13 +11,18 @@ if (date == "314") {
     document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
     document.getElementById("piImage").src = "piDay.png"
 }
-function gameFinished() {
+function gameFinished(result) {
     gameInProgress = false
-    toggleGameOverPopup("visible")
+    toggleGameOverPopup("visible", result)
     document.getElementById("piImage").src = "piCrying.png"
 }
-function toggleGameOverPopup(newVisibility) {
-    document.getElementById("gameOverPopup").style.visibility = newVisibility
+function toggleGameOverPopup(newVisibility, result) {
+    let getGameOverPopup =  document.getElementById("gameOverPopup")
+   getGameOverPopup.style.visibility = newVisibility
+    getGameOverPopup.classList.add("gameOverPopup"+result)
+    let getMainDiv = document.getElementById("mainDiv")
+    getMainDiv.style.pointerEvents = "none"
+    getMainDiv.style.filter = "blur(5px)"
 }
 function userGuessed(el) {
     console.log(el)
@@ -31,7 +36,7 @@ function userGuessed(el) {
         document.getElementById("piImage").src = "piSad.png"
         document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
         if (triesLeft == 0) {
-            gameFinished()
+            gameFinished('Lost')
         }
     }
     console.log(guessedPi)
