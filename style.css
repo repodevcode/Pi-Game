@@ -3,12 +3,16 @@ body{
     font-family: "Schoolbell", cursive;
     font-weight: 400;
     font-style: normal;
+    border: dotted blue 3px;
+    padding: 14px;
+    background: #e4f8ff;
 }
+
 #piImage{
     width: 96px;
 }
 #guessedDigitsInput{
-    width: 1526px;
+    width: 1495px;
     height: 15px;
     resize: none;
 }
