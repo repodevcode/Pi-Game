@@ -21,10 +21,18 @@ body{
 }
 #gameOverPopup{
     visibility: hidden;
+}
+.gameOverPopupWon {
     background: #ffa8a8;
     border: red dotted;
     padding: 18px;
 }
+.gameOverPopupLost{
+    background: #69ff56;
+    border: #237a00 dotted;
+    padding: 18px;
+}
+
 .videoDiv{
     visibility: hidden;
 }
