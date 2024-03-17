@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
 </head>
 <body>
-<div>
+<div id="mainDiv">
     <h1>The 100+ Digits of Pi Game</h1>
     <h2 id="piDayWish"></h2>
     <img id="piImage" src="pi.png" draggable="false"/>
@@ -32,7 +32,7 @@
     <br>
     <br>
     <p id="triesLeftSign">5 tries left</p>
-    <button class="tools">📻Open Pi Song</button>
+    <button class="tools" onclick="togglePiSongVisibility()">📻Open Pi Song</button>
 
     <button class="tools">💡Hint</button>
     <button class="tools" onclick="gameFinished()">🏳️Resign</button>
@@ -43,12 +43,12 @@
     <button onclick="playAgain()">Play Again</button>
     <button onclick="showAnswer()">Answer</button>
 </div>
-<div id="videoDiv">
-    <iframe width="500px" height="500px"
+<div id="videoDiv" class="videoDiv">
+    <iframe width="1495px" height="500px"
             src="https://www.youtube.com/embed/3HRkKznJoZA?autoplay=0&showinfo=0&controls=0" frameborder="0"
             allowfullscreen></iframe>
     <br>
-    <button>Close</button>
+    <button onclick="togglePiSongVisibility()">Close</button>
 </div>
 </body>
 <script src="script.js"></script>

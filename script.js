@@ -43,6 +43,12 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
     })
 }
 
+function togglePiSongVisibility() {
+    document.getElementById("videoDiv").classList.toggle("videoDivVisible")
+    document.getElementById("mainDiv").classList.toggle("mainDivHidden")
+
+}
+
 function playAgain(){
     toggleGameOverPopup("hidden")
     document.getElementById("guessedDigitsInput").style.color = "black"
