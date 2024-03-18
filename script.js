@@ -4,6 +4,7 @@ let guessedPi = ""
 let triesLeft = 5
 let gameInProgress = true
 let i = 0
+let hintsLeft = 2
 let date = new Date();
 date = String(date.getMonth() + 1) + String(+date.getDate())
 
@@ -33,8 +34,7 @@ function numberToWords(n) {
 
     // If number is less than 20, console.log without any
     if (n < 20) {
-        console.log(first_twenty[n])
-        return
+        return first_twenty[n]
     }
     let answer = ""
     let i = n
@@ -146,7 +146,14 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
         userGuessed(this)
     })
 }
-
+function getHint(el) {
+    hintsLeft = hintsLeft-1
+    if(hintsLeft == 0){
+        el.remove()
+    }
+    console.log(pi[i])
+    alert(numberToWords(pi[i]))
+}
 function togglePiSongVisibility(el) {
     document.getElementById("videoDiv").classList.toggle("videoDivVisible")
     document.getElementById("mainDiv").classList.toggle("mainDivHidden")

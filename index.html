@@ -33,9 +33,10 @@
     <br>
     <p id="triesLeftSign">5 tries left</p>
     <button id="piSongButton" class="tools" onclick="togglePiSongVisibility(this)">📻Open Pi Song (x1)</button>
-    <button class="tools">💡Hint (x2)</button>
+    <button class="tools" onclick="getHint(this)">💡Hint (x2)</button>
     <button class="tools" onclick="gameFinished('Lost')">🏳️Resign</button>
 </div>
+
 <div id="gameOverPopup">
     <h1>Game Over!</h1>
     <p>You lost.</p>
