@@ -62,8 +62,12 @@ body{
     position: relative;
     top: -241px;
 }
-#hintsBox{
+.hintsBox{
     border: dashed #cfcf0d 2px;
+    display: none;
+}
+.hintsBoxVisible{
+    display: block;
 }
 .gameOverPopupLost {
     background: #ffa8a8;

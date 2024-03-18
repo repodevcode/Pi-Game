@@ -149,7 +149,9 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
 }
 
 function getHint(el) {
-    let getHintParagraph = document.getElementsByClassName("hintParagraphs")[1 - hintsLeft]
+    document.getElementById("hintsBox").classList.add("hintBoxVisible")
+    document.getElementById("hintsBox").classList.remove("hintsBox")
+
     hintsLeft = hintsLeft - 1
     if (hintsLeft == 0) {
         el.remove()
@@ -159,6 +161,7 @@ function getHint(el) {
     if (pi[i] == ".") {
 
         if (hintsBefore == "not a number") {
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].style.visibility = "visible"
             document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = 'it is a "."'
         } else {
             document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "not a number"
@@ -168,6 +171,7 @@ function getHint(el) {
     else {
 
         if (hintsBefore == numberToWords(pi[i]).substring(0, 2)) {
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].style.visibility = "visible"
             document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "<b>First three letters:</b> " + numberToWords(pi[i]).substring(0, 3)
         } else {
             hintsBefore = numberToWords(pi[i]).substring(0, 2)
