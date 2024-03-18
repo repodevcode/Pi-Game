@@ -42,7 +42,12 @@
     <p>You lost.</p>
     <button class="gameOverPopupButtons" onclick="playAgain()">Play Again</button>
     <button class="gameOverPopupButtons" onclick="showAnswer(this)">Answer</button>
+    <button class="gameOverPopupButtons" onclick="showUsersAnswer(this)">Your Answer</button>
+
     <p id="gameAnswerParagraph" style="color: red"></p>
+    <p id="usersAnswerParagraph" style="color: red"></p>
+    <p id="statsParagraph" style="color: red"></p>
+
 </div>
 <div id="videoDiv" class="videoDiv">
     <iframe width="1495px" height="500px"

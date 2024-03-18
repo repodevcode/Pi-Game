@@ -22,7 +22,7 @@ function toggleGameOverPopup(newVisibility, result) {
     let getGameOverPopup = document.getElementById("gameOverPopup")
     getGameOverPopup.style.visibility = newVisibility
     getGameOverPopup.classList.add("gameOverPopup" + result)
-    for (let i = 0; i < document.getElementsByClassName("gameOverPopupButtons").length; i++){
+    for (let i = 0; i < document.getElementsByClassName("gameOverPopupButtons").length; i++) {
         document.getElementsByClassName("gameOverPopupButtons")[i].classList.add("gameOverPopupButtons" + result)
     }
     let getMainDiv = document.getElementById("mainDiv")
@@ -65,7 +65,20 @@ function playAgain() {
 }
 
 function showAnswer(el) {
-    document.getElementById("gameAnswerParagraph").innerHTML = piString
-    el.style.display ="none"
-    document.getElementById("mainDiv").style = ""
+    document.getElementById("gameAnswerParagraph").innerHTML = "<b><u>Correct Answer: </u></b>" + piString
+    el.style.display = "none"
+}
+
+function showUsersAnswer(el) {
+    let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph").innerHTML
+    if(guessedPi == ""){
+        getUsersAnswerParagraph.innerHTML = "<b><u>Your Answer: </u></b>" + "[did not guess any digits]"
+    }
+    else{
+        getUsersAnswerParagraph.innerHTML = "<b><u>Your Answer: </u></b>" + guessedPi
+    }
+    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered "+guessedPi.length+" digits out of 150"
+
+    el.style.display = "none"
+
 }
