@@ -40,8 +40,9 @@
 <div id="gameOverPopup">
     <h1>Game Over!</h1>
     <p>You lost.</p>
-    <button onclick="playAgain()">Play Again</button>
-    <button onclick="showAnswer()">Answer</button>
+    <button class="gameOverPopupButtons" onclick="playAgain()">Play Again</button>
+    <button class="gameOverPopupButtons" onclick="showAnswer(this)">Answer</button>
+    <p id="gameAnswerParagraph" style="color: red"></p>
 </div>
 <div id="videoDiv" class="videoDiv">
     <iframe width="1495px" height="500px"

@@ -29,7 +29,22 @@ body{
     border: red dotted;
     padding: 18px;
 }
-
+.gameOverPopupButtonsLost{
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.gameOverPopupButtonsLost:hover {
+    background-color: #CC0000;
+}
 .gameOverPopupWon{
     background: #69ff56;
     border: #237a00 dotted;

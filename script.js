@@ -11,19 +11,25 @@ if (date == "314") {
     document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
     document.getElementById("piImage").src = "piDay.png"
 }
+
 function gameFinished(result) {
     gameInProgress = false
     toggleGameOverPopup("visible", result)
     document.getElementById("piImage").src = "piCrying.png"
 }
+
 function toggleGameOverPopup(newVisibility, result) {
-    let getGameOverPopup =  document.getElementById("gameOverPopup")
-   getGameOverPopup.style.visibility = newVisibility
-    getGameOverPopup.classList.add("gameOverPopup"+result)
-        let getMainDiv = document.getElementById("mainDiv")
-        getMainDiv.style.pointerEvents = "none"
-        getMainDiv.style.filter = "blur(5px)"
+    let getGameOverPopup = document.getElementById("gameOverPopup")
+    getGameOverPopup.style.visibility = newVisibility
+    getGameOverPopup.classList.add("gameOverPopup" + result)
+    for (let i = 0; i < document.getElementsByClassName("gameOverPopupButtons").length; i++){
+        document.getElementsByClassName("gameOverPopupButtons")[i].classList.add("gameOverPopupButtons" + result)
+    }
+    let getMainDiv = document.getElementById("mainDiv")
+    getMainDiv.style.pointerEvents = "none"
+    getMainDiv.style.filter = "blur(5px)"
 }
+
 function userGuessed(el) {
     console.log(el)
     if (pi[i] == el.innerHTML) {
@@ -31,7 +37,7 @@ function userGuessed(el) {
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
         document.getElementById("piImage").src = "piHappy.png"
         i++
-    } else if(gameInProgress == true){
+    } else if (gameInProgress == true) {
         triesLeft = triesLeft - 1
         document.getElementById("piImage").src = "piSad.png"
         document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
@@ -54,16 +60,12 @@ function togglePiSongVisibility() {
 
 }
 
-function playAgain(){
-    toggleGameOverPopup("hidden")
-    document.getElementById("guessedDigitsInput").style.color = "black"
-    document.getElementById("guessedDigitsInput").innerHTML = ""
+function playAgain() {
+    location.reload()
 }
-function showAnswer() {
-    document.getElementById("guessedDigitsInput").style.color = "red"
-    document.getElementById("guessedDigitsInput").innerHTML = piString
-    document.getElementById("mainDiv").style = ""
-    let getGameOverPopup =  document.getElementById("gameOverPopup")
-    getGameOverPopup.style.visibility = "hidden"
 
+function showAnswer(el) {
+    document.getElementById("gameAnswerParagraph").innerHTML = piString
+    el.style.display ="none"
+    document.getElementById("mainDiv").style = ""
 }
