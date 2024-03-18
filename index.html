@@ -32,8 +32,8 @@
     <br>
     <br>
     <p id="triesLeftSign">5 tries left</p>
-    <button id="piSongButton" class="tools" onclick="togglePiSongVisibility()">📻Open Pi Song (1)</button>
-    <button class="tools">💡Hint</button>
+    <button id="piSongButton" class="tools" onclick="togglePiSongVisibility(this)">📻Open Pi Song (x1)</button>
+    <button class="tools">💡Hint (x2)</button>
     <button class="tools" onclick="gameFinished('Lost')">🏳️Resign</button>
 </div>
 <div id="gameOverPopup">
@@ -53,7 +53,8 @@
             src="https://www.youtube.com/embed/3HRkKznJoZA?autoplay=0&showinfo=0&controls=0" frameborder="0"
             allowfullscreen></iframe>
     <br>
-    <button onclick="togglePiSongVisibility()">Close</button>
+    <br>
+    <button onclick="togglePiSongVisibility()" class="tools">Close</button>
 </div>
 </body>
 <script src="script.js"></script>
