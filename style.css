@@ -62,6 +62,9 @@ body{
     position: relative;
     top: -241px;
 }
+#hintsBox{
+    border: dashed #cfcf0d 2px;
+}
 .gameOverPopupLost {
     background: #ffa8a8;
     border: red dotted;

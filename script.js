@@ -5,6 +5,7 @@ let triesLeft = 5
 let gameInProgress = true
 let i = 0
 let hintsLeft = 2
+let hintsBefore = NaN
 let date = new Date();
 date = String(date.getMonth() + 1) + String(+date.getDate())
 
@@ -146,14 +147,36 @@ for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i
         userGuessed(this)
     })
 }
+
 function getHint(el) {
-    hintsLeft = hintsLeft-1
-    if(hintsLeft == 0){
+    let getHintParagraph = document.getElementsByClassName("hintParagraphs")[1 - hintsLeft]
+    hintsLeft = hintsLeft - 1
+    if (hintsLeft == 0) {
         el.remove()
     }
-    console.log(pi[i])
-    alert(numberToWords(pi[i]))
+    console.log(2 - hintsLeft)
+
+    if (pi[i] == ".") {
+
+        if (hintsBefore == "not a number") {
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = 'it is a "."'
+        } else {
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "not a number"
+            hintsBefore = "not a number"
+        }
+    }
+    else {
+
+        if (hintsBefore == numberToWords(pi[i]).substring(0, 2)) {
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "<b>First three letters:</b> " + numberToWords(pi[i]).substring(0, 3)
+        } else {
+            hintsBefore = numberToWords(pi[i]).substring(0, 2)
+            document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "<b>First two letters:</b> " + numberToWords(pi[i]).substring(0, 2)
+        }
+    }
+    el.innerHTML = "💡Hint (x" + hintsLeft + ")"
 }
+
 function togglePiSongVisibility(el) {
     document.getElementById("videoDiv").classList.toggle("videoDivVisible")
     document.getElementById("mainDiv").classList.toggle("mainDivHidden")
