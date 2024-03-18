@@ -70,7 +70,7 @@ function showAnswer(el) {
 }
 
 function showUsersAnswer(el) {
-    let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph").innerHTML
+    let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph")
     if(guessedPi == ""){
         getUsersAnswerParagraph.innerHTML = "<b><u>Your Answer: </u></b>" + "[did not guess any digits]"
     }
