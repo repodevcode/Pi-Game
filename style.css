@@ -62,8 +62,10 @@ body{
     position: relative;
     top: -241px;
 }
-.hintsBox{
+#hintsBox{
     border: dashed #cfcf0d 2px;
+}
+.hintsBox{
     display: none;
 }
 .hintsBoxVisible{
