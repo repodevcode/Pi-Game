@@ -6,7 +6,7 @@ You can use the pi song to help you - link bellow!
 https://youtu.be/3HRkKznJoZA
 
 ### **Important Notice regarding terms for copying**
-* Cannot copy without mentioning the author (Github.com, repodevcode)
+* Cannot copy or use without mentioning the author (Github.com, repodevcode)
 ### **Sources**
 * [Pi Image](https://www.smartick.com/blog/wp-content/uploads/pi-1024x991.jpg)
 * [Pi with birthday hat image](https://gemini.google.com/app)
