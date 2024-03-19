@@ -126,8 +126,8 @@ function toggleGameOverPopup(newVisibility, result) {
 
 function userGuessed(el) {
     console.log(el)
-    if (pi[i] == el.innerHTML) {
-        guessedPi = guessedPi + el.innerHTML
+    if (pi[i] == el) {
+        guessedPi = guessedPi + el
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
         document.getElementById("piImage").src = "piHappy.png"
         i++
@@ -144,7 +144,7 @@ function userGuessed(el) {
 
 for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i++) {
     document.getElementsByClassName("guessingButtons")[i].addEventListener("click", function () {
-        userGuessed(this)
+        userGuessed(this.innerHTML)
     })
 }
 
