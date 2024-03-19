@@ -25,6 +25,13 @@ body{
 .guessingButtons:hover {
     background-color: #4169E1;
 }
+#guessingInput{
+    cursor: text;
+}
+#guessingInput::placeholder{
+    color: #fff0db;
+}
+
 .mainDivHidden{
     visibility: hidden;
 }
