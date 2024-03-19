@@ -5,8 +5,9 @@ Make the pi 𝝅🍰 happy by guessing all of its 100 digits.
 You can use the pi song to help you - link bellow!
 https://youtu.be/3HRkKznJoZA
 
-### **Important Notice regarding terms for copying**
-* Cannot copy or use without mentioning the author (@Repodevcode)
+### **Important Notice regarding license**
+* Please check license before using this project or making any changes to it.
+    Thank you!
 ### **Sources**
 * [Pi Image](https://www.smartick.com/blog/wp-content/uploads/pi-1024x991.jpg)
 * [Pi with birthday hat image](https://gemini.google.com/app)
