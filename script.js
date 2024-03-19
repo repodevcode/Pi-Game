@@ -143,9 +143,18 @@ function userGuessed(el) {
 }
 
 for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i++) {
-    document.getElementsByClassName("guessingButtons")[i].addEventListener("click", function () {
-        userGuessed(this.innerHTML)
-    })
+    if(i == 11) {
+        document.getElementsByClassName("guessingButtons")[i].addEventListener("input", function () {
+
+            userGuessed(this.value)
+            document.getElementsByClassName("guessingButtons")[i].value = ""
+        })
+    }
+    else {
+        document.getElementsByClassName("guessingButtons")[i].addEventListener("click", function () {
+            userGuessed(this.innerHTML)
+        })
+    }
 }
 
 function getHint(el) {
