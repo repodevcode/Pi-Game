@@ -80,6 +80,9 @@ body{
 .hintsBox{
     display: none;
 }
+.hintsBoxNotVisible{
+    display: none;
+}
 .hintsBoxVisible{
     display: block;
 }

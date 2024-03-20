@@ -7,9 +7,9 @@ let i = 0
 let hintsLeft = 2
 let hintsBefore = NaN
 let date = new Date();
-let minutes = 59
-let seconds = 59
-let hours = 59
+let minutes = 0
+let seconds = 0
+let hours = 0
 let clockIconPosition = -1
 let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
@@ -215,6 +215,7 @@ function getHint(el) {
 function togglePiSongVisibility(el) {
     document.getElementById("videoDiv").classList.toggle("videoDivVisible")
     document.getElementById("mainDiv").classList.toggle("mainDivHidden")
+    document.getElementById("hintsBox").classList.toggle("hintsBoxNotVisible")
     if(removeVid == true) {
         document.getElementById("asapVideo").src = ""
     }
