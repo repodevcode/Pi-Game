@@ -14,6 +14,9 @@ let clockIconPosition = -1
 let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
 
+function stopTimerTimout() {
+    clearTimeout(timerTimout);
+}
 function numberToWords(n) {
     // From: https://www.geeksforgeeks.org/convert-number-to-words/
     let limit = 1000000000000, t = 0
@@ -113,6 +116,7 @@ if (date == "314") {
 
 function gameFinished(result) {
     gameInProgress = false
+    stopTimerTimout()
     toggleGameOverPopup("visible", result)
     document.getElementById("piImage").src = "piCrying.png"
 }
@@ -228,9 +232,7 @@ function isOdd(n) {
     return Math.abs(n % 2) == 1;
 }
 
-function stopTimerTimout() {
-    clearTimeout(timerTimout);
-}
+
 
 function oneSecondPassed() {
     clockIconPosition = clockIconPosition + 1
