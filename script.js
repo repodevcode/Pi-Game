@@ -13,6 +13,7 @@ let hours = 59
 let clockIconPosition = -1
 let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
+let removeVid = false
 
 function stopTimerTimout() {
     clearTimeout(timerTimout);
@@ -200,7 +201,16 @@ function getHint(el) {
 function togglePiSongVisibility(el) {
     document.getElementById("videoDiv").classList.toggle("videoDivVisible")
     document.getElementById("mainDiv").classList.toggle("mainDivHidden")
-    el.remove()
+    if(removeVid == true) {
+        document.getElementById("asapVideo").src = ""
+    }
+    else{
+        el.remove()
+    }
+    removeVid = !removeVid
+
+
+
 }
 
 function playAgain() {
