@@ -159,7 +159,7 @@ function userGuessed(el) {
         document.getElementById("piImage").src = "piSad.png"
         document.getElementById("triesLeftSign").innerHTML = triesLeft + " tries left"
         if (triesLeft == 0) {
-            gameFinished('Lost')
+            gameFinished('Lost', document.getElementById("piImage"))
         }
     }
     firstGuess = false
