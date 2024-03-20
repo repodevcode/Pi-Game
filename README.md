@@ -9,7 +9,9 @@ https://youtu.be/3HRkKznJoZA
 * Please check license before using this project or making any changes to it.
     Thank you!
 ### **Sources**
-* [Pi Image](https://www.smartick.com/blog/wp-content/uploads/pi-1024x991.jpg)
-* [Pi with birthday hat image](https://gemini.google.com/app)
+* Images
+  * [Pi Image](https://www.smartick.com/blog/wp-content/uploads/pi-1024x991.jpg)
+  * [Pi with birthday hat image](https://gemini.google.com/app)
+  * [Pi at winners popup](ttps://gemini.google.com/app)
 * [Emojis](https://emojipedia.org/)
 * [Number to words function](https://www.geeksforgeeks.org/convert-number-to-words/)

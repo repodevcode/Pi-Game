@@ -49,8 +49,8 @@
 </div>
 <div id="gameOverPopup">
     <h1>Game Over!</h1>
-    <p>You lost.</p>
-    <img src="lost.png" class="piImage" style="width: 54px"/>
+    <p id="endOfGameStatusDisplay">You lost.</p>
+    <img id="gameOverPiImage" src="lost.png" class="piImage" style="width: 54px" draggable="false"/>
     <br>
     <br>
     <button class="gameOverPopupButtons" onclick="playAgain()">Play Again</button>
@@ -58,10 +58,10 @@
     <button class="gameOverPopupButtons" onclick="showUsersAnswer(this)">Your Answer</button>
     <button class="gameOverPopupButtons" onclick="displayStats(this)">Stats</button>
 
-    <p id="gameAnswerParagraph" style="color: red"></p>
-    <p id="usersAnswerParagraph" style="color: red"></p>
-    <p id="statsParagraph" style="color: red"></p>
-    <p id="statsTimeParagraph" style="color: red"></p>
+    <p id="gameAnswerParagraph"></p>
+    <p id="usersAnswerParagraph"></p>
+    <p id="statsParagraph"></p>
+    <p id="statsTimeParagraph"></p>
 
 
 </div>

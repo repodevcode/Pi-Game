@@ -90,6 +90,7 @@ body{
     background: #ffa8a8;
     border: red dotted;
     padding: 18px;
+    color: darkred;
 }
 .gameOverPopupButtonsLost{
     background-color: #FF0000;
@@ -107,12 +108,42 @@ body{
 .gameOverPopupButtonsLost:hover {
     background-color: #CC0000;
 }
+.popupResultTextsLost{
+    color: red;
+}
 .gameOverPopupWon{
     background: #69ff56;
     border: #237a00 dotted;
     padding: 18px;
+    color: darkgreen;
 }
-
+.gameOverPopupButtonsWon{
+    background-color: #32CD32;
+    color: #FFFFFF;
+    border: 2px solid #006400;
+    border-radius: 5px;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.gameOverPopupButtonsWon:hover{
+    background-color: #228B22;
+}
+.gameOverPiImageWon{
+    animation: grow-shrink 3s infinite;
+}
+@keyframes grow-shrink {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(4); /* Scaled up by 50% */
+    }
+}
 .videoDiv{
     visibility: hidden;
 }

@@ -146,6 +146,10 @@ function toggleGameOverPopup(newVisibility, result) {
     for (let i = 0; i < document.getElementsByClassName("gameOverPopupButtons").length; i++) {
         document.getElementsByClassName("gameOverPopupButtons")[i].classList.add("gameOverPopupButtons" + result)
     }
+    document.getElementById("endOfGameStatusDisplay").innerHTML = "You "+result.toLowerCase()+"."
+    document.getElementById("gameOverPiImage").src = result+".png"
+    document.getElementById("gameOverPiImage").classList.add("gameOverPiImage"+result)
+
     let getMainDiv = document.getElementById("mainDiv")
     getMainDiv.style.pointerEvents = "none"
     getMainDiv.style.filter = "blur(5px)"
@@ -161,6 +165,10 @@ function userGuessed(el) {
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
         document.getElementById("piImage").src = "piHappy.png"
         i++
+        if(guessedPi == piString){
+            console.log("You Won!")
+            toggleGameOverPopup("visible", "Won")
+        }
     } else if (gameInProgress == true) {
         triesLeft = triesLeft - 1
         document.getElementById("piImage").src = "piSad.png"
@@ -248,7 +256,7 @@ function displayStats(el) {
     document.getElementById("gameOverPopup").style.top = "-412px"
 
     let statsTimeDisplay
-    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digit(s) out of 150"
+    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digit(s) out of 152"
     if(hours > 59){
         statsTimeDisplay ="<b><u>Time: </u></b>" + "It took you more than 60 hours."
     }
