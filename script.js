@@ -123,6 +123,8 @@ function numberToWords(n) {
 if (date == "314") {
     document.getElementById("piDayWish").innerHTML = "Happy Pi Day!"
     document.getElementById("piImage").src = "piDay.png"
+    document.getElementById("favicon").href = "piDay.png"
+
 }
 
 function gameFinished(result, el) {
