@@ -38,7 +38,7 @@
     <p id="triesLeftSign">5 tries left</p>
     <button id="piSongButton" class="tools" onclick="togglePiSongVisibility(this)">📻Open Pi Song (x1)</button>
     <button class="tools" onclick="getHint(this)">💡Hint (x2)</button>
-    <button class="tools" onclick="gameFinished('Lost')">🏳️Resign</button>
+    <button class="tools" id="resignButton" onclick="gameFinished('Lost', this)">🏳️Resign</button>
 </div>
 <br>
 <div id="hintsBox" class="hintsBox">

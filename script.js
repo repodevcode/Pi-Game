@@ -7,9 +7,9 @@ let i = 0
 let hintsLeft = 2
 let hintsBefore = NaN
 let date = new Date();
-let minutes = 0
-let seconds = 0
-let hours = 0
+let minutes = 59
+let seconds = 59
+let hours = 59
 let clockIconPosition = -1
 let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
@@ -120,11 +120,16 @@ if (date == "314") {
     document.getElementById("piImage").src = "piDay.png"
 }
 
-function gameFinished(result) {
-    gameInProgress = false
-    stopStopwatchTimeout()
-    toggleGameOverPopup("visible", result)
-    document.getElementById("piImage").src = "piCrying.png"
+function gameFinished(result, el) {
+    if(el.id == "resignButton" && firstGuess == true){
+        alert("You cannot resign when you never guessed.")
+    }
+    else {
+        gameInProgress = false
+        stopStopwatchTimeout()
+        toggleGameOverPopup("visible", result)
+        document.getElementById("piImage").src = "piCrying.png"
+    }
 }
 
 function toggleGameOverPopup(newVisibility, result) {
@@ -231,9 +236,16 @@ function showAnswer(el) {
     el.style.display = "none"
 }
 function displayStats(el) {
-    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digits out of 150"
-
-    el.display = "none"
+    let statsTimeDisplay
+    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digit(s) out of 150"
+    if(hours > 59){
+        statsTimeDisplay ="<b><u>Time: </u></b>" + "It took you more than 60 hours."
+    }
+    else {
+        statsTimeDisplay = "<b><u>Time: </u></b>" + "It took you " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds."
+    }
+    document.getElementById("statsTimeParagraph").innerHTML = statsTimeDisplay
+    el.style.display = "none"
 }
 function showUsersAnswer(el) {
     let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph")
