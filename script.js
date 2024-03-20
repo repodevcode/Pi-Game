@@ -14,8 +14,13 @@ let clockIconPosition = -1
 let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
 let removeVid = false
+let firstGuess = true
 
-function stopTimerTimout() {
+
+function startStopwatchTimeout(){
+    let timerTimout = setTimeout(oneSecondPassed, 1000);
+}
+function stopStopwatchTimeout() {
     clearTimeout(timerTimout);
 }
 function numberToWords(n) {
@@ -117,7 +122,7 @@ if (date == "314") {
 
 function gameFinished(result) {
     gameInProgress = false
-    stopTimerTimout()
+    stopStopwatchTimeout()
     toggleGameOverPopup("visible", result)
     document.getElementById("piImage").src = "piCrying.png"
 }
@@ -136,6 +141,9 @@ function toggleGameOverPopup(newVisibility, result) {
 
 function userGuessed(el) {
     console.log(el)
+    if(firstGuess == true){
+        startStopwatchTimeout()
+    }
     if (pi[i] == el) {
         guessedPi = guessedPi + el
         document.getElementById("guessedDigitsInput").innerHTML = guessedPi
@@ -149,6 +157,7 @@ function userGuessed(el) {
             gameFinished('Lost')
         }
     }
+    firstGuess = false
     console.log(guessedPi)
 }
 
@@ -221,7 +230,11 @@ function showAnswer(el) {
     document.getElementById("gameAnswerParagraph").innerHTML = "<b><u>Correct Answer: </u></b>" + piString
     el.style.display = "none"
 }
+function displayStats(el) {
+    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digits out of 150"
 
+    el.display = "none"
+}
 function showUsersAnswer(el) {
     let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph")
     if (guessedPi == "") {
@@ -229,8 +242,6 @@ function showUsersAnswer(el) {
     } else {
         getUsersAnswerParagraph.innerHTML = "<b><u>Your Answer: </u></b>" + guessedPi
     }
-    document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digits out of 150"
-
     el.style.display = "none"
 }
 
@@ -263,11 +274,10 @@ function oneSecondPassed() {
     let displayTime = clockIcon + hours + ":" + minutes + ":" + seconds
     timerTimout = setTimeout(oneSecondPassed, 1000);
     if (hours == 60) {
-        stopTimerTimout()
+        stopStopwatchTimeout()
         displayTime = clockIcon + "Exceeded 60 hours!"
     }
     document.getElementById("stopwatchPrint").innerHTML = displayTime
 }
 
-let timerTimout = setTimeout(oneSecondPassed, 1000);
 

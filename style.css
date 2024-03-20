@@ -42,6 +42,11 @@ body{
     width: 1495px;
     height: 15px;
     resize: none;
+    border: darkblue dotted 2px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .tools{
     background-color: #1E90FF;

@@ -16,7 +16,7 @@
     <img id="piImage" src="pi.png" draggable="false"/>
     <br>
     <br>
-    <h3 id="stopwatchPrint">🕒0:00:00</h3>
+    <h3 id="stopwatchPrint">🕒Start guessing to start stopwatch</h3>
 
     <textarea id="guessedDigitsInput" placeholder="Start guessing using buttons or text input." readonly>
 </textarea>
@@ -53,10 +53,13 @@
     <button class="gameOverPopupButtons" onclick="playAgain()">Play Again</button>
     <button class="gameOverPopupButtons" onclick="showAnswer(this)">Answer</button>
     <button class="gameOverPopupButtons" onclick="showUsersAnswer(this)">Your Answer</button>
+    <button class="gameOverPopupButtons" onclick="displayStats(this)">Stats</button>
 
     <p id="gameAnswerParagraph" style="color: red"></p>
     <p id="usersAnswerParagraph" style="color: red"></p>
     <p id="statsParagraph" style="color: red"></p>
+    <p id="statsTimeParagraph" style="color: red"></p>
+
 
 </div>
 <div id="videoDiv" class="videoDiv">
