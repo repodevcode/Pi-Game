@@ -35,7 +35,7 @@ body{
 .mainDivHidden{
     visibility: hidden;
 }
-#piImage{
+.piImage{
     width: 96px;
 }
 #guessedDigitsInput{

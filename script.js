@@ -21,7 +21,12 @@ function startStopwatchTimeout(){
     let timerTimout = setTimeout(oneSecondPassed, 1000);
 }
 function stopStopwatchTimeout() {
-    clearTimeout(timerTimout);
+    try {
+        clearTimeout(timerTimout);
+    }
+    catch(err){
+
+    }
 }
 function numberToWords(n) {
     // From: https://www.geeksforgeeks.org/convert-number-to-words/
@@ -234,9 +239,12 @@ function playAgain() {
 
 function showAnswer(el) {
     document.getElementById("gameAnswerParagraph").innerHTML = "<b><u>Correct Answer: </u></b>" + piString
+    document.getElementById("gameOverPopup").style.top = "-412px"
     el.style.display = "none"
 }
 function displayStats(el) {
+    document.getElementById("gameOverPopup").style.top = "-412px"
+
     let statsTimeDisplay
     document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digit(s) out of 150"
     if(hours > 59){
@@ -249,6 +257,8 @@ function displayStats(el) {
     el.style.display = "none"
 }
 function showUsersAnswer(el) {
+    document.getElementById("gameOverPopup").style.top = "-412px"
+
     let getUsersAnswerParagraph = document.getElementById("usersAnswerParagraph")
     if (guessedPi == "") {
         getUsersAnswerParagraph.innerHTML = "<b><u>Your Answer: </u></b>" + "[did not guess any digits]"
@@ -257,16 +267,6 @@ function showUsersAnswer(el) {
     }
     el.style.display = "none"
 }
-
-function isEven(n) {
-    return n % 2 == 0;
-}
-
-function isOdd(n) {
-    return Math.abs(n % 2) == 1;
-}
-
-
 
 function oneSecondPassed() {
     clockIconPosition = clockIconPosition + 1
