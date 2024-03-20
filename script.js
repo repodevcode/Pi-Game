@@ -7,6 +7,11 @@ let i = 0
 let hintsLeft = 2
 let hintsBefore = NaN
 let date = new Date();
+let minutes = 58
+let seconds = 57
+let hours = 59
+let clockIconPosition = -1
+let clockIconPositions = ["🕛", "🕒","🕧", "🕘"]
 date = String(date.getMonth() + 1) + String(+date.getDate())
 
 function numberToWords(n) {
@@ -143,14 +148,13 @@ function userGuessed(el) {
 }
 
 for (let i = 0; i < document.getElementsByClassName("guessingButtons").length; i++) {
-    if(i == 11) {
+    if (i == 11) {
         document.getElementsByClassName("guessingButtons")[i].addEventListener("input", function () {
 
             userGuessed(this.value)
             document.getElementsByClassName("guessingButtons")[i].value = ""
         })
-    }
-    else {
+    } else {
         document.getElementsByClassName("guessingButtons")[i].addEventListener("click", function () {
             userGuessed(this.innerHTML)
         })
@@ -176,8 +180,7 @@ function getHint(el) {
             document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].innerHTML = "not a number"
             hintsBefore = "not a number"
         }
-    }
-    else {
+    } else {
 
         if (hintsBefore == numberToWords(pi[i]).substring(0, 2)) {
             document.getElementsByClassName("hintParagraphs")[1 - hintsLeft].style.visibility = "visible"
@@ -215,5 +218,44 @@ function showUsersAnswer(el) {
     document.getElementById("statsParagraph").innerHTML = "<b><u>Stats: </u></b>" + "you answered " + guessedPi.length + " digits out of 150"
 
     el.style.display = "none"
-
 }
+
+function isEven(n) {
+    return n % 2 == 0;
+}
+
+function isOdd(n) {
+    return Math.abs(n % 2) == 1;
+}
+
+function stopTimerTimout() {
+    clearTimeout(timerTimout);
+}
+
+function oneSecondPassed() {
+    clockIconPosition = clockIconPosition + 1
+    console.log(clockIconPosition)
+    if (clockIconPosition > clockIconPositions.length - 1) {
+        clockIconPosition = 0
+    }
+    let clockIcon = clockIconPositions[clockIconPosition]
+    seconds = seconds + 1
+    if (seconds == 60) {
+        minutes = minutes + 1
+        seconds = seconds - 60
+    }
+    if (minutes == 60) {
+        hours = hours + 1
+        minutes = minutes - 60
+    }
+    let displayTime = clockIcon + hours + ":" + minutes + ":" + seconds
+    timerTimout = setTimeout(oneSecondPassed, 1000);
+    if (hours == 60) {
+        stopTimerTimout()
+        displayTime = clockIcon + "Exceeded 60 hours!"
+    }
+    document.getElementById("stopwatchPrint").innerHTML = displayTime
+}
+
+let timerTimout = setTimeout(oneSecondPassed, 1000);
+
