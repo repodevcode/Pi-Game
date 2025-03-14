@@ -148,7 +148,7 @@ function toggleGameOverPopup(newVisibility, result) {
     }
     document.getElementById("endOfGameStatusDisplay").innerHTML = "You "+result.toLowerCase()+"."
     document.getElementById("gameOverPiImage").src = result+".png"
-    document.getElementById("gameOverPiImage").classList.add("gameOverPiImage"+result)
+    document.getElementById("gameOverPiImage").classList.add("gameOverPiImage"+result.toLowerCase())
 
     let getMainDiv = document.getElementById("mainDiv")
     getMainDiv.style.pointerEvents = "none"
